@@ -11,9 +11,9 @@ README.md: This file provides information and instructions for utilizing the pro
 Usage Instructions:
 Clone the repository to your local machine using the following command:
 
-bash
+## bash
 Copy code
-git clone <repository-url>
+git clone <http://127.0.0.1:5500/Animated-product-card-in-HTML-CSS-JS-main/Product-Card-Using-HTML-CSS-master/index.html#>
 Open the index.html file in a web browser to view the product card webpage.
 
 Explore the product card to view details about the Nike product, including name, description, available colors, sizes, and pricing.
