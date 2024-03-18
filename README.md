@@ -26,7 +26,7 @@ Use the provided social media sharing links to share the product with others on 
 
 Click on the "BUY NOW" button to navigate to the Nike website for purchasing the product.
 
-##Compatibility:
+# Compatibility:
 This product card webpage is designed to be responsive and compatible with various screen sizes, including desktop and mobile devices.
 Tested on major web browsers including Google Chrome, Mozilla Firefox, and Safari.
 Credits:
@@ -35,9 +35,9 @@ Google Fonts is used for typography.
 License:
 This project is licensed under the MIT License.
 
-##Author:
+## Author:
 vishal kharat
 
-##Contact Information:
+## Contact Information:
 For any inquiries or support regarding this project, please contact kharatv925@gmail.com
 
