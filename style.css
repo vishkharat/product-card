@@ -471,3 +471,15 @@ body{
         padding: 20px;
     }
 }
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0b0909; 
+    color: #6cd1ef;
+    text-align: center;
+    padding: 10px 0; 
+}
