@@ -1,62 +1,84 @@
-const sizes = document.querySelectorAll('.size');
-const colors = document.querySelectorAll('.color');
-const shoes = document.querySelectorAll('.shoe');
-const gradients = document.querySelectorAll('.gradient');
-const shoeBg = document.querySelector('.shoeBackground');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <title>Product Card</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="shoeBackground">
+                <div class="gradients">
+                    <div class="gradient second" color="blue"></div>
+                    <div class="gradient" color="red"></div>
+                    <div class="gradient" color="green"></div>
+                    <div class="gradient" color="orange"></div>
+                    <div class="gradient" color="black"></div>
+                </div>
+                <h1 class="nike">nike</h1>
+                <img src="img/logo.png" alt="" class="logo">
+               
+                <a href="whatsapp://send?text=Check out this awesome Nike product: https://www.example.com" class="share" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/" class="share" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.example.com" class="share" target="_blank"><i class="fab fa-facebook"></i></a>
+                <!-- Add similar links for other social media platforms as needed -->
+                <img src="img/blue.png" alt="" class="shoe show" color="blue">
+                <img src="img/red.png" alt="" class="shoe" color="red">
+                <img src="img/green.png" alt="" class="shoe" color="green">
+                <img src="img/orange.png" alt="" class="shoe" color="orange">
+                <img src="img/black.png" alt="" class="shoe" color="black">
 
-let prevColor = "blue";
-let animationEnd = true;
-
-function changeSize(){
-    sizes.forEach(size => size.classList.remove('active'));
-    this.classList.add('active');
-}
-
-function changeColor(){
-    if(!animationEnd) return;
-    let primary = this.getAttribute('primary');
-    let color = this.getAttribute('color');
-    let shoe = document.querySelector(`.shoe[color="${color}"]`);
-    let gradient = document.querySelector(`.gradient[color="${color}"]`);
-    let prevGradient = document.querySelector(`.gradient[color="${prevColor}"]`);
-
-    if(color == prevColor) return;
-
-    colors.forEach(c => c.classList.remove('active'));
-    this.classList.add('active');
-
-    document.documentElement.style.setProperty('--primary', primary);
-    
-    shoes.forEach(s => s.classList.remove('show'));
-    shoe.classList.add('show');
-
-    gradients.forEach(g => g.classList.remove('first', 'second'));
-    gradient.classList.add('first');
-    prevGradient.classList.add('second');
-
-    prevColor = color;
-    animationEnd = false;
-
-    gradient.addEventListener('animationend', () => {
-        animationEnd = true;
-    })
-}
-
-sizes.forEach(size => size.addEventListener('click', changeSize));
-colors.forEach(c => c.addEventListener('click', changeColor));
-
-let x = window.matchMedia("(max-width: 1000px)");
-
-function changeHeight(){
-    if(x.matches){
-        let shoeHeight = shoes[0].offsetHeight;
-        shoeBg.style.height = `${shoeHeight * 0.9}px`;
-    }
-    else{
-        shoeBg.style.height = "475px";
-    }
-}
-
-changeHeight();
-
-window.addEventListener('resize', changeHeight);
+            </div>
+            <div class="info">
+                <div class="shoeName">
+                    <div>
+                        <h1 class="big">Nike Zoom KD 12</h1>
+                        <span class="new">Brand new</span>
+                    </div>
+                    <h3 class="small">Men's running shoes</h3>
+                </div>
+                <div class="description">
+                    <h3 class="title">Product Info</h3>
+                    <p class="text">Nike Zoom KD 12: High-performance basketball shoe with Zoom Air cushioning for explosive responsiveness and lightweight support, designed in collaboration with Kevin Durant.</p>
+                </div>
+                <div class="color-container">
+                    <h3 class="title">Color</h3>
+                    <div class="colors">
+                        <span class="color active" primary="#2175f5" color="blue"></span>
+                        <span class="color" primary="#f84848" color="red"></span>
+                        <span class="color" primary="#29b864" color="green"></span>
+                        <span class="color" primary="#ff5521" color="orange"></span>
+                        <span class="color" primary="#444" color="black"></span>
+                    </div>
+                </div>
+                <div class="size-container">
+                    <h3 class="title">size</h3>
+                    <div class="sizes">
+                        <span class="size">7</span>
+                        <span class="size">8</span>
+                        <span class="size active">9</span>
+                        <span class="size">10</span>
+                        <span class="size">11</span>
+                    </div>
+                </div>
+                <div class="buy-price">
+                    <a href="https://www.nike.com/w?q=nike%20zoom%20kd%2012&vst=nike%20zoom%20kd%2012" class="buy" target="_blank"><i class="fas fa-shopping-cart"></i>BUY NOW</a>
+                    <div class="price">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h1>150</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 VishalKharat. All rights reserved.</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
